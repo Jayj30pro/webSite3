@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavMenuService } from '../nav-menu.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private _navMenuService: NavMenuService) { }
+
+  welcome() {
+    this._navMenuService.welcome();
+  }
+
+  guest() {
+
+  }
+
+  signUp() {
+
+  }
+
 
 }

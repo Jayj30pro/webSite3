@@ -1,16 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>welcome everyone</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="#3C7" (click)="signUp()">Sign Up</ion-button>
+      <ion-button color="#3C7" (click)="login()">Login</ion-button>
+      <ion-button color="#3C7" (click)="guest()">Login as guest</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">welcome page</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
 <ion-content class="card">
   <ion-title id="welcome">Welcome to my website</ion-title>
 </ion-content>

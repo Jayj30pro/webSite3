@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavMenuService } from 'src/app/nav-menu.service';
+
+
+
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomePage implements OnInit {
 
-  constructor() { }
+  constructor(private _navMenuService: NavMenuService) { }
 
   ngOnInit() {
   }
+
+  login() {
+    this._navMenuService.login();
+  }
+
+  guest() {
+
+  }
+
+  signUp() {
+
+  }
+
 
 }
