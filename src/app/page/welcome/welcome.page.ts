@@ -13,6 +13,12 @@ export class WelcomePage implements OnInit {
 
   constructor(private _navMenuService: NavMenuService) { }
 
+  nameEntered: string = '';
+  
+  currentUser(){
+    return this._navMenuService.currentUser;
+  }
+  
   ngOnInit() {
   }
 
@@ -25,6 +31,13 @@ export class WelcomePage implements OnInit {
   }
 
   signUp() {
+
+  }
+
+  saveName() {
+    this._navMenuService.currentUser = this.nameEntered;
+    this.nameEntered = '';
+
 
   }
 

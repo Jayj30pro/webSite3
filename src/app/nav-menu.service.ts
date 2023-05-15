@@ -8,6 +8,8 @@ export class NavMenuService {
 
   constructor(private router: Router) { }
 
+  currentUser: string = 'New User';
+
   login() {
     this.router.navigate(['home']);
   }

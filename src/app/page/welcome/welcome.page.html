@@ -11,9 +11,11 @@
 
 
 <ion-content class="card">
-  <ion-title id="welcome">Welcome to my website</ion-title>
+  <ion-title id="welcome">Welcome to my website {{currentUser()}} </ion-title>
 </ion-content>
 
 <ion-content class="card">
-  <ion-card-title>using ionic</ion-card-title>
+  <ion-card-title>using enter name here</ion-card-title>
+  <ion-input type="text" placeholder="enter name" [(ngModel)]="nameEntered"></ion-input>
+  <ion-button (click)="saveName()" > Save</ion-button>
 </ion-content>

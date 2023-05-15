@@ -4,7 +4,7 @@
     <ion-buttons slot="end">
       <ion-button color="#3C7" (click)="signUp()">Sign Up</ion-button>
       <ion-button color="#3C7" (click)="welcome()">Welcome</ion-button>
-      <ion-button color="#3C7" (click)="guest()">Login as guest</ion-button>
+      <ion-button color="#3C7" (click)="options()">Options</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
   </ion-header>
 
   <div id="container">
-    <strong>Jason Jacobs</strong>
+    <strong> {{currentUser()}} </strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
 </ion-content>
