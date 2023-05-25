@@ -8,10 +8,10 @@ export class NavMenuService {
 
   constructor(private router: Router) { }
 
-  currentUser: string = '';
+  guestUser: string = '';
 
-  login() {
-    this.router.navigate(['home']);
+  loginPage() {
+    this.router.navigate(['login']);
   }
 
   guest() {

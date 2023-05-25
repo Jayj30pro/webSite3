@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavMenuService } from 'src/app/nav-menu.service';
-
+import { LoginService } from 'src/app/login.service';
 
 
 
@@ -11,20 +11,31 @@ import { NavMenuService } from 'src/app/nav-menu.service';
 })
 export class WelcomePage implements OnInit {
 
-  constructor(private _navMenuService: NavMenuService) { }
+  constructor(
+    private _navMenuService: NavMenuService,
+    private _loginService: LoginService) { }
 
   nameEntered: string = '';
   
   currentUser(){
-    return this._navMenuService.currentUser;
+    return this._navMenuService.guestUser;
+  }
+
+  loginStatus() {
+    return this._loginService.notLoggedIn;
   }
   
   ngOnInit() {
   }
 
-  login() {
-    this._navMenuService.login();
+  loginPage() {
+    this._navMenuService.loginPage();
   }
+
+  logout() {
+    this._loginService.logout();
+  }
+  
 
   guest() {
 
@@ -35,7 +46,8 @@ export class WelcomePage implements OnInit {
   }
 
   saveName() {
-    this._navMenuService.currentUser = this.nameEntered;
+    this._navMenuService.guestUser = this.nameEntered;
+    this._loginService.guestLogin();
     this.nameEntered = '';
 
 

@@ -12,7 +12,7 @@ export class HomePage {
   constructor(private _navMenuService: NavMenuService) { }
 
   currentUser(){
-    return this._navMenuService.currentUser;
+    return this._navMenuService.guestUser;
   }
   
 
