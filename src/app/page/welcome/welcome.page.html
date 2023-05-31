@@ -1,23 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>welcome everyone</ion-title>
-    <ion-buttons slot="end" *ngIf="loginStatus() == false">
-      <ion-button color="#3C7" (click)="signUp()">Sign Up</ion-button>
+    <ion-buttons slot="end" *ngIf="loginStatus()">
+      <ion-button color="#3C7" (click)="home()">Home</ion-button>
       <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
-      <ion-button color="#3C7" (click)="guest()">Login as guest</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content class="card" *ngIf="currentUser() != ''">
+<ion-content class="card" *ngIf="loginStatus()">
   <ion-title id="welcome">Welcome to my website {{currentUser()}} </ion-title>
 </ion-content>
 
 
-<ion-content class="card" id="enter-name" *ngIf="loginStatus() == true">
+<ion-content class="card" id="enter-name" *ngIf="loginStatus() == false">
   <ion-card-title>Press login or enter a name to temporarily browse the site</ion-card-title>
   <ion-input type="text" placeholder="enter name" [(ngModel)]="nameEntered"></ion-input>
-  <ion-button (click)="saveName()" > Save</ion-button>
+  <ion-button (click)="guest()" > Guest </ion-button>
   <ion-button (click)="loginPage()" > Login</ion-button>
 </ion-content>

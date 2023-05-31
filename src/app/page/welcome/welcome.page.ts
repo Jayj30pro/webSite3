@@ -16,13 +16,17 @@ export class WelcomePage implements OnInit {
     private _loginService: LoginService) { }
 
   nameEntered: string = '';
+
+  issignedIn() {
+    return this._loginService.isSignedIn();
+  }
   
   currentUser(){
     return this._navMenuService.guestUser;
   }
 
   loginStatus() {
-    return this._loginService.notLoggedIn;
+    return this._loginService.isSignedIn();
   }
   
   ngOnInit() {
@@ -34,11 +38,15 @@ export class WelcomePage implements OnInit {
 
   logout() {
     this._loginService.logout();
+    this._loginService.signedIn = false;
   }
   
+  home() {
+    this._navMenuService.home();
+  }
 
   guest() {
-
+    this._navMenuService.guest();
   }
 
   signUp() {
@@ -46,6 +54,7 @@ export class WelcomePage implements OnInit {
   }
 
   saveName() {
+    this._loginService.signedIn = true;
     this._navMenuService.guestUser = this.nameEntered;
     this._loginService.guestLogin();
     this.nameEntered = '';

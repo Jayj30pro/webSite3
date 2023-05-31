@@ -7,23 +7,24 @@ export class LoginService {
 
   constructor() { }
 
-  notLoggedIn = true;
+  signedIn = false;
 
-  isAsGuest = true;
 
   logout() {
-    this.isAsGuest = true;
-    this.notLoggedIn = true;
+
+    this.signedIn = false;
   }
 
   login() {
-    this.isAsGuest = false;
-    this.notLoggedIn = false;
+    this.signedIn = true;
   }
 
   guestLogin() {
-    this.isAsGuest = true;
-    this.notLoggedIn = false;
+    this.signedIn = true;
+  }
+
+  isSignedIn() {
+    return this.signedIn;
   }
 
 }

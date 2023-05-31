@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>login</ion-title>
-    <ion-buttons slot="end" *ngIf="loginStatus() == false">
+    <ion-buttons slot="end" *ngIf="loginStatus()">
       <ion-button color="#3C7" (click)="wlcome()">Welcome</ion-button>
       <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
       <ion-button color="#3C7" (click)="guest()">Switch to guest</ion-button>
@@ -17,7 +17,7 @@
   </ion-header>
 </ion-content>
 
-<ion-content class="card" id="log-in" *ngIf="loginStatus()">
+<ion-content class="card" id="log-in" *ngIf="loginStatus() == false">
   <ion-card-title>Enter you username and password</ion-card-title>
   <ion-input type="text" placeholder="username" [(ngModel)]="unameEntered"></ion-input>
   <ion-input type="password" placeholder="pword" [(ngModel)]="pwordEntered"></ion-input>

@@ -15,7 +15,11 @@ export class NavMenuService {
   }
 
   guest() {
+    this.router.navigate(['guest'])
+  }
 
+  home() {
+    this.router.navigate(['home']);
   }
 
   signUp() {

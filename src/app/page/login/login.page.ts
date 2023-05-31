@@ -37,11 +37,11 @@ export class LoginPage implements OnInit {
   }
 
   loginStatus() {
-    return this._loginService.notLoggedIn;
+    return this._loginService.isSignedIn();
   }
 
   loginSuccess() {
-    this._loginService.notLoggedIn = false;
+    this._loginService.signedIn = true;
   }
 
 }
