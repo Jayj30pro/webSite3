@@ -25,10 +25,6 @@ export class WelcomePage implements OnInit {
     return this._navMenuService.guestUser;
   }
 
-  loginStatus() {
-    return this._loginService.isSignedIn();
-  }
-  
   ngOnInit() {
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavMenuService } from 'src/app/nav-menu.service';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-guest',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _navMenuService: NavMenuService,
+    private _loginService: LoginService) { }
 
   ngOnInit() {
   }
+
+  issignedIn() {
+    return this._loginService.isSignedIn();
+  }
+  
+  logout() {
+    this._loginService.logout();
+    this._loginService.signedIn = false;
+  }
+  
+  home() {
+    this._navMenuService.home();
+  }
+
 
 }
