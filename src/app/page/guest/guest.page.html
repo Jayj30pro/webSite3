@@ -1,6 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>guest</ion-title>
+    <ion-title>Welcome Guest</ion-title>
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button color="#3C7" (click)="home()">Home</ion-button>
+      <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,3 +15,4 @@
     </ion-toolbar>
   </ion-header>
 </ion-content>
+
