@@ -22,7 +22,7 @@ export class WelcomePage implements OnInit {
   }
   
   currentUser(){
-    return this._navMenuService.guestUser;
+    return this._loginService.getUser();
   }
 
   ngOnInit() {
@@ -34,7 +34,6 @@ export class WelcomePage implements OnInit {
 
   logout() {
     this._loginService.logout();
-    this._loginService.signedIn = false;
   }
   
   home() {
@@ -49,14 +48,9 @@ export class WelcomePage implements OnInit {
 
   }
 
-  saveName() {
-    this._loginService.signedIn = true;
-    this._navMenuService.guestUser = this.nameEntered;
-    this._loginService.guestLogin();
-    this.nameEntered = '';
 
+  // it works with login but not guest
 
-  }
 
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavMenuService } from '../nav-menu.service';
+import { LoginService } from '../login.service';
 
 
 @Component({
@@ -9,24 +10,39 @@ import { NavMenuService } from '../nav-menu.service';
 })
 export class HomePage {
 
-  constructor(private _navMenuService: NavMenuService) { }
+  constructor(
+    private _navMenuService: NavMenuService,
+    private _loginService: LoginService) { }
 
   currentUser(){
-    return this._navMenuService.guestUser;
+    return this._loginService.getUser();
   }
   
-
-  welcome() {
-    this._navMenuService.welcome();
+  issignedIn() {
+    return this._loginService.isSignedIn();
+  }
+  
+  about() {
+    this._navMenuService.about();
   }
 
-  options() {
+  projects() {
+    this._navMenuService.projects();
+  }
 
+  skills() {
+    this._navMenuService.skills()
   }
 
   signUp() {
 
   }
+
+  logout() {
+    this._navMenuService.welcome();
+    this._loginService.logout();
+  }
+
 
 
 }

@@ -1,23 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Home </ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="#3C7" (click)="signUp()">Sign Up</ion-button>
-      <ion-button color="#3C7" (click)="welcome()">Welcome</ion-button>
-      <ion-button color="#3C7" (click)="options()">Options</ion-button>
+    
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button color="#3C7" (click)="projects()">Projects</ion-button>
+      <ion-button color="#3C7" (click)="skills()">Skills</ion-button>
+      <ion-button color="#3C7" (click)="about()">About</ion-button>
+      <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Jason Jacobs</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
+
+
+<ion-content *ngIf="issignedIn()">
   <div id="container">
-    <strong> {{currentUser()}} </strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Here are some popular attractions.</p>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="container">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
   </div>
 </ion-content>

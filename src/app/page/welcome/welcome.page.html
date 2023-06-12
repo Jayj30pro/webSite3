@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Welcome </ion-title>
+    <ion-title>Welcome {{currentUser()}} </ion-title>
     <ion-buttons slot="end" *ngIf="issignedIn()">
       <ion-button color="#3C7" (click)="home()">Home</ion-button>
       <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
@@ -15,7 +15,7 @@
 
 
 <ion-content class="card" id="enter-name" *ngIf="issignedIn() == false">
-  <ion-card-title> Login or browse as a guest</ion-card-title>
-  <ion-button (click)="loginPage()" > Login</ion-button>
-  <ion-button (click)="guest()" > Guest </ion-button>
+  <ion-card-title> Welcome to my site click the button to eneter</ion-card-title>
+  
+  <ion-button (click)="guest()" > Enter </ion-button>
 </ion-content>

@@ -10,25 +10,45 @@ export class NavMenuService {
 
   guestUser: string = '';
 
-  loginPage() {
-    this.router.navigate(['login']);
+  about() {
+    this.router.navigate(['about']);
+  }
+
+  contact() {
+    this.router.navigate(['contact']);
   }
 
   guest() {
-    this.router.navigate(['guest'])
+    this.router.navigate(['guest']);
   }
 
   home() {
     this.router.navigate(['home']);
   }
 
-  signUp() {
+  
+  projects() {
+    this.router.navigate(['projects']);
+  }
 
+  skills() {
+    this.router.navigate(['skills']);
   }
 
   welcome() {
     this.router.navigate(['welcome']);
   }
 
+  // no function 
+
+  loginPage() {
+    this.router.navigate(['login']);
+  }
+
+  signUp() {
+
+  }
+  
+  // Needs backend
 
 }
