@@ -14,7 +14,7 @@
 
 
 <ion-content *ngIf="issignedIn() == false">
-  <div id="container">
+  <div id="loggedOut">
     <strong> I'm sorry It looks like you were signed out. </strong>
     <p>Please sign in</p>
     <ion-button (click)="logout()"> Enter </ion-button>
@@ -24,13 +24,19 @@
 
 <ion-content *ngIf="issignedIn()">
   <div id="container">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Here are some popular attractions.</p>
+    <div id="heading">
+      <strong> Hi {{currentUser()}}. </strong>
+      <p>Here are some popular attractions.</p>
+    </div>
+    <div class="attraction"> Games </div>
+    <div class="attraction"> Web Apps </div>
+    <div class="attraction"> Achievements </div>
+    <div class="attraction"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSltRTq27EAVfaQDEelpoGkQGMi3Y91pUIhcw&usqp=CAU"/> GitHub </div>
   </div>
 </ion-content>
 
 <!--
-<ion-content *ngIf="issignedIn()">
+<ion-content *ngIf="issignedIn()">r
   <div class="attraction">
     <strong> Hi {{currentUser()}}. </strong>
     <p>Click here for a dead end</p>
