@@ -13,13 +13,6 @@
 
 
 
-<ion-content *ngIf="issignedIn()">
-  <div id="container">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Here are some popular attractions.</p>
-  </div>
-</ion-content>
-
 <ion-content *ngIf="issignedIn() == false">
   <div id="container">
     <strong> I'm sorry It looks like you were signed out. </strong>
@@ -27,3 +20,56 @@
     <ion-button (click)="logout()"> Enter </ion-button>
   </div>
 </ion-content>
+
+
+<ion-content *ngIf="issignedIn()">
+  <div id="container">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Here are some popular attractions.</p>
+  </div>
+</ion-content>
+
+<!--
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for a dead end</p>
+    <img src="../../assets/shapes.svg"/>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for more bs</p>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for a dead end</p>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for more bs</p>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for a dead end</p>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div class="attraction">
+    <strong> Hi {{currentUser()}}. </strong>
+    <p>Click here for more bs</p>
+  </div>
+</ion-content>
+-->

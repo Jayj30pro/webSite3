@@ -27,9 +27,13 @@ export class GuestPage implements OnInit {
   }
 
   guestLogin() {
-    this._loginService.guestLogin(this.nameEntered);
-    this._navMenuService.home();
-
+    if (this.nameEntered == '') {
+      alert("Please enter name")
+    }
+    else {
+      this._loginService.guestLogin(this.nameEntered);
+      this._navMenuService.home();
+    }
   }
   
   logout() {
