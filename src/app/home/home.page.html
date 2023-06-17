@@ -2,10 +2,10 @@
   <ion-toolbar>
     
     <ion-buttons slot="end" *ngIf="issignedIn()">
-      <ion-button color="#3C7" (click)="projects()">Projects</ion-button>
-      <ion-button color="#3C7" (click)="skills()">Skills</ion-button>
-      <ion-button color="#3C7" (click)="about()">About</ion-button>
-      <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
+      <ion-button (click)="projects()">Projects</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -28,54 +28,9 @@
       <strong> Hi {{currentUser()}}. </strong>
       <p>Here are some popular attractions.</p>
     </div>
-    <div class="attraction"> Games </div>
-    <div class="attraction"> Web Apps </div>
-    <div class="attraction"> Achievements </div>
-    <div class="attraction"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSltRTq27EAVfaQDEelpoGkQGMi3Y91pUIhcw&usqp=CAU"/> GitHub </div>
+    <a class="attraction" (click)="projects()"> Games </a>
+    <a class="attraction" (click)="projects()"> Web Apps </a>
+    <a class="attraction" (click)="skills()"> Achievements </a>
+    <a class="attraction" href="http://www.github.com" target="_blank"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSltRTq27EAVfaQDEelpoGkQGMi3Y91pUIhcw&usqp=CAU"/> GitHub </a>
   </div>
 </ion-content>
-
-<!--
-<ion-content *ngIf="issignedIn()">r
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for a dead end</p>
-    <img src="../../assets/shapes.svg"/>
-  </div>
-</ion-content>
-
-<ion-content *ngIf="issignedIn()">
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for more bs</p>
-  </div>
-</ion-content>
-
-<ion-content *ngIf="issignedIn()">
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for a dead end</p>
-  </div>
-</ion-content>
-
-<ion-content *ngIf="issignedIn()">
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for more bs</p>
-  </div>
-</ion-content>
-
-<ion-content *ngIf="issignedIn()">
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for a dead end</p>
-  </div>
-</ion-content>
-
-<ion-content *ngIf="issignedIn()">
-  <div class="attraction">
-    <strong> Hi {{currentUser()}}. </strong>
-    <p>Click here for more bs</p>
-  </div>
-</ion-content>
--->

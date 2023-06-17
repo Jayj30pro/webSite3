@@ -38,7 +38,8 @@ const routes: Routes = [
   {
     path: 'skills',
     loadChildren: () => import('./page/skills/skills.module').then( m => m.SkillsPageModule)
-  },
+  }
+
 ];
 
 @NgModule({

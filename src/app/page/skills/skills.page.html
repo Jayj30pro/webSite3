@@ -1,13 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>skills</ion-title>
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="projects()">Projects</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">skills</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div id="skill-area">
+    <img class="skill-image" src="../../../assets/Certs/css-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/html-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/java-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/javascript-free-code-camp.png"/>
+    <img class="skill-image" src="../../../assets/Certs/js-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/js-game-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/marketers-coding-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/py-begin-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/py-data-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/py-data-sci-beg-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/py-finance-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/py-int-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/python-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/responsive-web-cert.jpg"/>
+    <img class="skill-image" src="../../../assets/Certs/responsive-web-design.png"/>
+    <img class="skill-image" src="../../../assets/Certs/sql-cert.png"/>
+    <img class="skill-image" src="../../../assets/Certs/web-dev-fundamentals.jpg"/>
+  </div>
 </ion-content>
