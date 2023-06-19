@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavMenuService } from 'src/app/nav-menu.service';
 import { LoginService } from 'src/app/login.service';
+import { SkillsModelService } from './_services/skills.model.service';
 
 @Component({
   selector: 'app-skills',
@@ -11,10 +12,15 @@ export class SkillsPage implements OnInit {
 
   constructor(
     private _navMenuService: NavMenuService,
-    private _loginService: LoginService) { }
+    private _loginService: LoginService,
+    private _skillsModelService: SkillsModelService) { }
 
   ngOnInit() {
   }
+
+  selected = this._skillsModelService.pictures[3];
+
+  
 
   currentUser(){
     return this._loginService.getUser();
@@ -36,8 +42,15 @@ export class SkillsPage implements OnInit {
     this._navMenuService.home();
   }
 
-  signUp() {
+  itemSelect(entry: number) {
+    this.selected = this._skillsModelService.itemSelect(entry);
+    this.lightSwitch = true;
+  }
 
+  lightSwitch = false;
+
+  lightsOff() {
+    this.lightSwitch = false;
   }
 
   logout() {

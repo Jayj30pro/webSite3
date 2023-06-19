@@ -9,24 +9,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="skill-area">
-    <img class="skill-image" src="../../../assets/Certs/css-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/html-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/java-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/javascript-free-code-camp.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/js-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/js-game-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/marketers-coding-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/py-begin-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/py-data-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/py-data-sci-beg-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/py-finance-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/py-int-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/python-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/responsive-web-cert.jpg" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/responsive-web-design.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/sql-cert.png" alt="certificate"/>
-    <img class="skill-image" src="../../../assets/Certs/web-dev-fundamentals.jpg" alt="certificate"/>
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div id="lightSwitch">
+    <div id="on" *ngIf="lightSwitch">
+      <ion-button (click)="lightsOff()">Close</ion-button>
+    </div>
+  </div>
+  <div id="skill-area" *ngIf="lightSwitch == false">
+    <img (click)="itemSelect(0)" class="skill-image" src="../../../assets/Certs/css-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(1)" class="skill-image" src="../../../assets/Certs/html-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(2)" class="skill-image" src="../../../assets/Certs/java-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(3)" class="skill-image" src="../../../assets/Certs/javascript-free-code-camp.png" alt="certificate"/>
+    <img (click)="itemSelect(4)" class="skill-image" src="../../../assets/Certs/js-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(5)" class="skill-image" src="../../../assets/Certs/js-game-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(6)" class="skill-image" src="../../../assets/Certs/marketers-coding-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(7)" class="skill-image" src="../../../assets/Certs/py-begin-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(8)" class="skill-image" src="../../../assets/Certs/py-data-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(9)" class="skill-image" src="../../../assets/Certs/py-data-sci-beg-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(10)" class="skill-image" src="../../../assets/Certs/py-finance-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(11)" class="skill-image" src="../../../assets/Certs/py-int-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(12)" class="skill-image" src="../../../assets/Certs/python-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(13)" class="skill-image" src="../../../assets/Certs/responsive-web-cert.jpg" alt="certificate"/>
+    <img (click)="itemSelect(14)" class="skill-image" src="../../../assets/Certs/responsive-web-design.png" alt="certificate"/>
+    <img (click)="itemSelect(15)" class="skill-image" src="../../../assets/Certs/sql-cert.png" alt="certificate"/>
+    <img (click)="itemSelect(16)" class="skill-image" src="../../../assets/Certs/web-dev-fundamentals.jpg" alt="certificate"/>
+  </div>
+
+  <div *ngIf="lightSwitch">
+    <div id="backdrop"></div>
+    <img id="showcase" src= {{selected}}/>
   </div>
 </ion-content>
