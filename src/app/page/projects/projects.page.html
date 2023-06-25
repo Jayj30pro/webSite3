@@ -1,13 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>projects</ion-title>
+    
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">projects</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div id="container">
+    <div id="heading">
+      <strong> Hi {{currentUser()}}. </strong>
+      <p>Here are some popular attractions.</p>
+    </div>
+    <a class="attraction" (click)="projects()"> Games </a>
+    <a class="attraction" (click)="projects()"> Web Apps </a>
+    <a class="attraction" (click)="skills()"> Python </a>
+    <a class="attraction" href="https://github.com/Jayj30pro" target="_blank"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSltRTq27EAVfaQDEelpoGkQGMi3Y91pUIhcw&usqp=CAU"/> GitHub </a>
+  </div>
 </ion-content>
