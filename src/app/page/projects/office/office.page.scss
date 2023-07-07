@@ -1,0 +1,12 @@
+#container {
+    text-align: center;
+    height: 85vh;
+    width: 98vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    border: solid #000 5px; 
+    border-radius: 5%;
+    transform: translateX(1%);
+  }

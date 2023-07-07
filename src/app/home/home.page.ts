@@ -26,6 +26,14 @@ export class HomePage {
     this._navMenuService.about();
   }
 
+  arcade() {
+    this._navMenuService.arcade();
+  }
+
+  office() {
+    this._navMenuService.office();
+  }
+
   projects() {
     this._navMenuService.projects();
   }

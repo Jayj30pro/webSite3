@@ -26,7 +26,14 @@ export class NavMenuService {
     this.router.navigate(['home']);
   }
 
-  
+  arcade()  {
+    this.router.navigate(['arcade'])
+  }
+
+  office() {
+    this.router.navigate(['office'])
+  }
+
   projects() {
     this.router.navigate(['projects']);
   }

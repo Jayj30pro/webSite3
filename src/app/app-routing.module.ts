@@ -38,6 +38,14 @@ const routes: Routes = [
   {
     path: 'skills',
     loadChildren: () => import('./page/skills/skills.module').then( m => m.SkillsPageModule)
+  },
+  {
+    path: 'arcade',
+    loadChildren: () => import('./page/projects/arcade/arcade.module').then( m => m.ArcadePageModule)
+  },
+  {
+    path: 'office',
+    loadChildren: () => import('./page/projects/office/office.module').then( m => m.OfficePageModule)
   }
 
 ];

@@ -25,10 +25,11 @@
   <div id="container">
     <div id="heading">
       <strong> Hi {{currentUser()}}. </strong>
-      <p>Here are some recent projects</p>
+      <p>Welcome to the arcade</p>
     </div>
-    <a class="attraction" (click)="arcade()"> Games </a>
-    <a class="attraction" (click)="office()"> Web Apps </a>
-    <a class="attraction" href="https://github.com/Jayj30pro" target="_blank"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSltRTq27EAVfaQDEelpoGkQGMi3Y91pUIhcw&usqp=CAU"/> GitHub </a>
+    <a class="attraction" (click)="arcade()"> Tic-Tac-Toe </a>
+    <a class="attraction" (click)="arcade()"> Rock Paper Scisors </a>
+    
   </div>
+  <a (click)="projects()"> back to projects </a>
 </ion-content>

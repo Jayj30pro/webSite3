@@ -23,6 +23,8 @@ export class ProjectsPage implements OnInit {
   issignedIn() {
     return this._loginService.isSignedIn();
   }
+
+  
   
   about() {
     this._navMenuService.about();
@@ -30,6 +32,14 @@ export class ProjectsPage implements OnInit {
 
   home() {
     this._navMenuService.home();
+  }
+
+  arcade() {
+    this._navMenuService.arcade();
+  }
+
+  office() {
+    this._navMenuService.office();
   }
 
   projects() {
