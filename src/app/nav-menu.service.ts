@@ -30,8 +30,24 @@ export class NavMenuService {
     this.router.navigate(['arcade'])
   }
 
+  tictactoe()  {
+    this.router.navigate(['tictactoe'])
+  }
+
+  rockpaperscisors()  {
+    this.router.navigate(['rockpaperscisors'])
+  }
+
   office() {
     this.router.navigate(['office'])
+  }
+
+  notetaker() {
+    this.router.navigate(['notetaker'])
+  }
+
+  weather() {
+    this.router.navigate(['weather'])
   }
 
   projects() {

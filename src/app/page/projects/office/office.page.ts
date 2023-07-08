@@ -43,6 +43,14 @@ export class OfficePage implements OnInit {
     office() {
       this._navMenuService.office();
     }
+
+    notetaker() {
+      this._navMenuService.notetaker();
+    }
+
+    weather() {
+      this._navMenuService.weather();
+    }
   
     projects() {
       this._navMenuService.projects();

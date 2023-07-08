@@ -44,8 +44,24 @@ const routes: Routes = [
     loadChildren: () => import('./page/projects/arcade/arcade.module').then( m => m.ArcadePageModule)
   },
   {
+    path: 'tictactoe',
+    loadChildren: () => import('./page/projects/arcade/tictactoe/tictactoe.module').then( m => m.TictactoePageModule)
+  },
+  {
+    path: 'rockpaperscisors',
+    loadChildren: () => import('./page/projects/arcade/rockpaperscisors/rockpaperscisors.module').then( m => m.RockpaperscisorsPageModule)
+  },
+  {
     path: 'office',
     loadChildren: () => import('./page/projects/office/office.module').then( m => m.OfficePageModule)
+  },
+  {
+    path: 'notetaker',
+    loadChildren: () => import('./page/projects/office/notetaker/notetaker.module').then( m => m.NotetakerPageModule)
+  },
+  {
+    path: 'weather',
+    loadChildren: () => import('./page/projects/office/weather/weather.module').then( m => m.WeatherPageModule)
   }
 
 ];

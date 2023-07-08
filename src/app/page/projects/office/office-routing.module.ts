@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: OfficePage
+  },
+  {
+    path: 'notetaker',
+    loadChildren: () => import('./notetaker/notetaker.module').then( m => m.NotetakerPageModule)
+  },
+  {
+    path: 'weather',
+    loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
   }
 ];
 

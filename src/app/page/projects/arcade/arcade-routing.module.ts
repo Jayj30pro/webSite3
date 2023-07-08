@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ArcadePage
+  },
+  {
+    path: 'tictactoe',
+    loadChildren: () => import('./tictactoe/tictactoe.module').then( m => m.TictactoePageModule)
+  },
+  {
+    path: 'rockpaperscisors',
+    loadChildren: () => import('./rockpaperscisors/rockpaperscisors.module').then( m => m.RockpaperscisorsPageModule)
   }
 ];
 

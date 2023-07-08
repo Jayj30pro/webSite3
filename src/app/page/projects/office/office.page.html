@@ -26,10 +26,10 @@
     <div id="heading">
       <strong> Hi {{currentUser()}}. </strong>
       <p>Welcome to the office</p>
+      <a (click)="projects()"> click here to return to projects </a>
     </div>
-    <a class="attraction" (click)="office()"> Note taker </a>
-    <a class="attraction" (click)="office()"> Weather App </a>
+    <a class="attraction" (click)="notetaker()"> Note taker </a>
+    <a class="attraction" (click)="weather()"> Weather App </a>
     
   </div>
-  <a (click)="projects()"> back to projects </a>
 </ion-content>

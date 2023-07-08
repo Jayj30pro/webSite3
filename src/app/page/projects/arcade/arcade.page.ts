@@ -35,6 +35,14 @@ export class ArcadePage implements OnInit {
       this._navMenuService.home();
     }
   
+    rockpaperscisors() {
+      this._navMenuService.rockpaperscisors();
+    }
+
+    tictactoe() {
+      this._navMenuService.tictactoe();
+    }
+  
     arcade() {
       this._navMenuService.arcade();
     }
