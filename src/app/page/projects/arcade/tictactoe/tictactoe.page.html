@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tictactoe</ion-title>
+    
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tictactoe</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <header id="heading" align="center"> Welcome to TIC TAC TOE </header>
+        <button id="reset" onclick="reset()"> Reset </button>
+        <p id="turn" align="center"> X's turn </p>
+        <div id="game-board" align="center">
+            <div id="top-left" class="tile" onclick="topLeft()"> - </div>
+            <div id="top-center" class="tile" onclick="topCenter()"> - </div>
+            <div id="top-right" class="tile" onclick="topRight()"> - </div>
+            <div id="mid-left" class="tile" onclick="midLeft()"> - </div>
+            <div id="mid-center" class="tile" onclick="midCenter()"> - </div>
+            <div id="mid-right" class="tile" onclick="midRight()"> - </div>
+            <div id="low-left" class="tile" onclick="lowLeft()"> - </div>
+            <div id="low-center" class="tile" onclick="lowCenter()"> - </div>
+            <div id="low-right" class="tile" onclick="lowRight()"> - </div>
+        </div>
 </ion-content>

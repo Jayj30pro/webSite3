@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>rockpaperscisors</ion-title>
+    <ion-title>
+      Rock, Paper, Scissors Game
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">rockpaperscisors</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button (click)="selectOption('rock')">Rock</ion-button>
+  <ion-button (click)="selectOption('paper')">Paper</ion-button>
+  <ion-button (click)="selectOption('scissors')">Scissors</ion-button>
+
+  <ion-card *ngIf="result">
+    <ion-card-content>
+      <h2>Result:</h2>
+      <p>You chose: {{ playerChoice }}</p>
+      <p>Computer chose: {{ computerChoice }}</p>
+      <p>{{ result }}</p>
+    </ion-card-content>
+    <ion-footer>
+      <ion-button (click)="resetGame()">Play Again</ion-button>
+    </ion-footer>
+  </ion-card>
 </ion-content>
