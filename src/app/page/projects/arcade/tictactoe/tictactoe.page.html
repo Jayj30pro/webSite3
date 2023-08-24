@@ -23,8 +23,9 @@
 
 <ion-content *ngIf="issignedIn()">
   <header id="heading" align="center"> Welcome to TIC TAC TOE </header>
-        <button id="reset" onclick="reset()"> Reset </button>
+        <button id="reset" (click)="reset()"> Reset </button>
         <button id="go-back" (click)="projects()"> Back to Projects </button>
+        <p> {{message}}</p>
         <p id="turn" align="center"> {{currentPlayer}}'s turn </p>
         <div id="game-board" align="center">
             <div id="top-left" class="tile" (click)="makeMove('top-left')"> - </div>
