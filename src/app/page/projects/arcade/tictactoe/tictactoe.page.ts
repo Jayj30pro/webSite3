@@ -13,24 +13,32 @@ export class TictactoePage implements OnInit {
     private _navMenuService: NavMenuService,
     private _loginService: LoginService) { }
 
+  currentPlayer = "X";
+
   ngOnInit() {
   }
 
   currentUser(){
     return this._loginService.getUser();
   }
+
+  makeMove(place: string){
+    let spot = document.getElementById(place);
+    if (spot != null){
+      spot.innerHTML = this.currentPlayer;
+      if (this.currentPlayer == "X"){
+        this.currentPlayer = "O";
+      }
+      else {
+        this.currentPlayer = "X";
+      }
+    }
+  }
   
   issignedIn() {
     return this._loginService.isSignedIn();
   }
   
-  about() {
-    this._navMenuService.about();
-  }
-
-  home() {
-    this._navMenuService.home();
-  }
 
   rockpaperscisors() {
     this._navMenuService.rockpaperscisors();
@@ -52,12 +60,16 @@ export class TictactoePage implements OnInit {
     this._navMenuService.projects();
   }
 
+  home() {
+    this._navMenuService.home();
+  }
+
   skills() {
     this._navMenuService.skills()
   }
 
-  signUp() {
-
+  about() {
+    this._navMenuService.about();
   }
 
   logout() {

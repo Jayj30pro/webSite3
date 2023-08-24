@@ -24,16 +24,17 @@
 <ion-content *ngIf="issignedIn()">
   <header id="heading" align="center"> Welcome to TIC TAC TOE </header>
         <button id="reset" onclick="reset()"> Reset </button>
-        <p id="turn" align="center"> X's turn </p>
+        <button id="go-back" (click)="projects()"> Back to Projects </button>
+        <p id="turn" align="center"> {{currentPlayer}}'s turn </p>
         <div id="game-board" align="center">
-            <div id="top-left" class="tile" onclick="topLeft()"> - </div>
-            <div id="top-center" class="tile" onclick="topCenter()"> - </div>
-            <div id="top-right" class="tile" onclick="topRight()"> - </div>
-            <div id="mid-left" class="tile" onclick="midLeft()"> - </div>
-            <div id="mid-center" class="tile" onclick="midCenter()"> - </div>
-            <div id="mid-right" class="tile" onclick="midRight()"> - </div>
-            <div id="low-left" class="tile" onclick="lowLeft()"> - </div>
-            <div id="low-center" class="tile" onclick="lowCenter()"> - </div>
-            <div id="low-right" class="tile" onclick="lowRight()"> - </div>
+            <div id="top-left" class="tile" (click)="makeMove('top-left')"> - </div>
+            <div id="top-center" class="tile" (click)="makeMove('top-center')"> - </div>
+            <div id="top-right" class="tile" (click)="makeMove('top-right')"> - </div>
+            <div id="mid-left" class="tile" (click)="makeMove('mid-left')"> - </div>
+            <div id="mid-center" class="tile" (click)="makeMove('mid-center')"> - </div>
+            <div id="mid-right" class="tile" (click)="makeMove('mid-right')"> - </div>
+            <div id="low-left" class="tile" (click)="makeMove('low-left')"> - </div>
+            <div id="low-center" class="tile" (click)="makeMove('low-center')"> - </div>
+            <div id="low-right" class="tile" (click)="makeMove('low-right')"> - </div>
         </div>
 </ion-content>
