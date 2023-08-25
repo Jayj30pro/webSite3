@@ -36,9 +36,9 @@ export class RockpaperscisorsPage implements OnInit {
       (this.playerChoice === 'paper' && this.computerChoice === 'rock') ||
       (this.playerChoice === 'scissors' && this.computerChoice === 'paper')
     ) {
-      this.result = 'You win!';
+      this.result = `horay ${this.playerChoice}  wins!`;
     } else {
-      this.result = 'Computer wins!';
+      this.result = 'The computer wins!';
     }
   }
 

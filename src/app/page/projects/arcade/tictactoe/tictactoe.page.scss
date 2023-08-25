@@ -1,17 +1,25 @@
-body {
-    background-image: url("tic-tac-toe-background.png");
+#back-drop {
+    background-image: url("../../../../../assets/backgrounds/tic-tac-toe-background.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: #000;
+    width: 98vw;
+    height: auto;
     color: #FFF;
-    font-size: 40px;
-    
+
 }
 
-#footer {
-    font-size: 15px;
-    color: #0F0;
+#heading {
+    transform: translate(70px, 30px);
 }
+
+#turn {
+    transform: translate(-50px, -20px);
+}
+
+#message {
+    transform: translate(-50px, -20px);
+}
+
 
 #game-board {
     
@@ -32,15 +40,15 @@ body {
 }
 
 #reset{
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px;
+    font-size: 2vh;
+    margin: 2vw;
+    padding: 1vw;
 }
 
 #go-back{
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px;
+    font-size: 2vh;
+    margin: 2vw;
+    padding: 1vw;
 }
 
 #space{background: #000; grid-area: spc;}
@@ -55,11 +63,11 @@ body {
 #low-right{ grid-area: lr;}
 
 .tile {
-    background: #FFF; 
+    background: #777; 
     display:flex; font-size: 
     80px; align-items: center; 
     justify-content: center;
-    color: #000;
+    color: #0C0;
 }
 
 .tile:hover {background: rgba(100, 100, 100, 0.4);}
