@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-title>
+      Tic Tac Toe
+    </ion-title>
     
     <ion-buttons slot="end" *ngIf="issignedIn()">
       <ion-button (click)="home()">Home</ion-button>
@@ -23,9 +26,16 @@
 
 <ion-content *ngIf="issignedIn()">
   <div id="back-drop">
-    <header id="heading" align="right"> Welcome to TIC TAC TOE </header>
-          <button id="reset" (click)="reset()"> Reset </button>
-          <button id="go-back" (click)="arcade()"> Back to Arcade </button>
+    <ion-card *ngIf="gameRunning == false">
+      <ion-card-content id="result"  align="center">
+        <h2>Game Over</h2>
+        <p>The winner is{{winner}}</p>
+        <ion-button id="reset" (click)="reset()"> Play Again </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <header id="heading" align="center"> Welcome to TIC TAC TOE </header>
+          
+          <ion-button id="go-back" (click)="arcade()"> Back to Arcade </ion-button>
           <p id="message" align="right"> {{message}}</p>
           <p id="turn" align="right"> {{currentPlayer}}'s Turn</p>
           <div id="game-board" align="right">

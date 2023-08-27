@@ -1,16 +1,39 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Rock, Paper, Scissors Game
     </ion-title>
+
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="selectOption('rock')">Rock</ion-button>
-  <ion-button (click)="selectOption('paper')">Paper</ion-button>
-  <ion-button (click)="selectOption('scissors')">Scissors</ion-button>
 
+
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <ion-button id="go-back" (click)="arcade()"> Back to Arcade </ion-button>
+  <div id="selections">
+    <ion-button class="player-option" (click)="selectOption('rock')"> Rock</ion-button>
+    <img class="game-piece" src="../../../../../assets/rockPaperScissors/rock.jpeg" alt="rock"/>
+    <ion-button class="player-option" (click)="selectOption('paper')">Paper</ion-button>
+    <img class="game-piece" src="../../../../../assets/rockPaperScissors/paper.jpeg" alt="paper"/>
+    <ion-button class="player-option" (click)="selectOption('scissors')">Scissors</ion-button>
+    <img class="game-piece" src="../../../../../assets/rockPaperScissors/scissors.jpeg" alt="scissors"/>
+  </div>
   <ion-card *ngIf="result">
     <ion-card-content>
       <h2>Result:</h2>

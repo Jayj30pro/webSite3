@@ -17,6 +17,7 @@ export class TictactoePage implements OnInit {
 
   message = "";
   gameRunning = true;
+  winner = "";
 
   topLeft = document.getElementById("top-left");
 
@@ -50,7 +51,7 @@ export class TictactoePage implements OnInit {
       }
     }
     else {
-      alert("this game has ended press reset to start another game.");
+      alert("this game has ended press play again to start another game.");
     }
   }
 
@@ -85,126 +86,126 @@ export class TictactoePage implements OnInit {
     //horizontal
     if (board[0] == "X" && board[1] == "X" && board[2] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[3] == "X" && board[4] == "X" && board[5] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[6] == "X" && board[7] == "X" && board[8] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[0] == "O" && board[1] == "O" && board[2] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     if (board[3] == "O" && board[4] == "O" && board[5] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "      
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     if (board[6] == "O" && board[7] == "O" && board[8] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     //vertical
     if (board[0] == "X" && board[3] == "X" && board[6] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[1] == "X" && board[4] == "X" && board[7] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[2] == "X" && board[5] == "X" && board[8] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[0] == "O" && board[3] == "O" && board[6] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     if (board[1] == "O" && board[4] == "O" && board[7] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     if (board[2] == "O" && board[5] == "O" && board[8] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     //diagonal
 
     if (board[0] == "X" && board[4] == "X" && board[8] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[2] == "X" && board[4] == "X" && board[6] == "X") {
       this.message = "X gon give it to ya!!!";
+      this.winner = " X's ";
       this.gameRunning = false
       this.endMessages();
-      alert("X wins");
     }
 
     if (board[0] == "O" && board[4] == "O" && board[8] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     if (board[2] == "O" && board[4] == "O" && board[6] == "O") {
       this.message = "Oh Oh it's Magic!";
+      this.winner = " O's "
       this.gameRunning = false
       this.endMessages();
-      alert("O wins");
     }
 
     // no more moves
     if(this.gameRunning){
       if (board[0] != " - " && board[1] != " - " && board[2] != " - " && board[3] != " - " && board[4] != " - " && board[5] != " - " && board[6] != " - " && board[7] != " - " && board[8] != " - ") {
         this.message = "No more moves left";
+        this.winner = " No one ";
         this.gameRunning = false
         this.endMessages();
-        alert("Draw");
       }
     }
 
@@ -242,7 +243,7 @@ export class TictactoePage implements OnInit {
     return this._loginService.isSignedIn();
   }
   
-  // functions to other pages 
+  // links to other pages
 
   rockpaperscisors() {
     this._navMenuService.rockpaperscisors();

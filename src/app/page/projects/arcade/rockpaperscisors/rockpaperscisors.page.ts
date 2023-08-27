@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavMenuService } from 'src/app/nav-menu.service';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-rockpaperscisors',
@@ -11,7 +13,10 @@ export class RockpaperscisorsPage implements OnInit {
   computerChoice: string = '';
   result: string = '';
 
-  constructor() { }
+  constructor(
+    private _navMenuService: NavMenuService,
+    private _loginService: LoginService) { }
+
 
   ngOnInit() {
   }
@@ -36,7 +41,7 @@ export class RockpaperscisorsPage implements OnInit {
       (this.playerChoice === 'paper' && this.computerChoice === 'rock') ||
       (this.playerChoice === 'scissors' && this.computerChoice === 'paper')
     ) {
-      this.result = `horay ${this.playerChoice}  wins!`;
+      this.result = `Good job ${this.playerChoice}!`;
     } else {
       this.result = 'The computer wins!';
     }
@@ -47,4 +52,46 @@ export class RockpaperscisorsPage implements OnInit {
     this.computerChoice = '';
     this.result = '';
   }
+
+  issignedIn() {
+    return this._loginService.isSignedIn();
+  }
+
+    // links to other pages
+
+    rockpaperscisors() {
+      this._navMenuService.rockpaperscisors();
+    }
+  
+    arcade() {
+      this._navMenuService.arcade();
+    }
+  
+    office() {
+      this._navMenuService.office();
+    }
+  
+    projects() {
+      this._navMenuService.projects();
+    }
+  
+    home() {
+      this._navMenuService.home();
+    }
+  
+    skills() {
+      this._navMenuService.skills()
+    }
+  
+    about() {
+      this._navMenuService.about();
+    }
+  
+    // exit
+  
+    logout() {
+      this._navMenuService.welcome();
+      this._loginService.logout();
+    }
+  
 }

@@ -1,8 +1,28 @@
 ion-button {
-    margin: 10px;
-  }
-  
-  ion-card {
-    margin: 20px;
-  }
-  
+  margin: 10px;
+}
+
+ion-card {
+  margin: 20px;
+}
+
+.game-piece {
+  width: 100px;
+  height: 100px;
+}
+
+.player-option {
+  width: 250px;
+}
+
+#selections {
+  display: flex;
+  height: 50vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#go-back {
+  margin: 15px;
+}
+

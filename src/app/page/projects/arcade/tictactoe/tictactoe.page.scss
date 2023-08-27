@@ -5,7 +5,7 @@
     width: 98vw;
     height: auto;
     color: #FFF;
-
+    font-size: large;
 }
 
 #heading {
@@ -39,16 +39,10 @@
 
 }
 
-#reset{
-    font-size: 2vh;
-    margin: 2vw;
-    padding: 1vw;
-}
-
-#go-back{
-    font-size: 2vh;
-    margin: 2vw;
-    padding: 1vw;
+#result {
+    background-color:#0C0;
+    font-size: larger;
+    color: #000;
 }
 
 #space{background: #000; grid-area: spc;}
