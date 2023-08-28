@@ -7,17 +7,17 @@ ion-card {
 }
 
 .game-piece {
-  width: 100px;
+  width: 150px;
   height: 100px;
 }
 
 .player-option {
-  width: 250px;
+  width: 350px;
 }
 
 #selections {
   display: flex;
-  height: 50vh;
+  height: auto;
   flex-wrap: wrap;
   justify-content: center;
 }
