@@ -20,6 +20,7 @@ export class SkillsPage implements OnInit {
 
   selected = this._skillsModelService.pictures[3];
 
+  lightSwitch = false;
   
 
   currentUser(){
@@ -47,7 +48,6 @@ export class SkillsPage implements OnInit {
     this.lightSwitch = true;
   }
 
-  lightSwitch = false;
 
   lightsOff() {
     this.lightSwitch = false;

@@ -18,11 +18,7 @@
 </ion-content>
 
 <ion-content *ngIf="issignedIn()">
-  <div id="lightSwitch">
-    <div id="on" *ngIf="lightSwitch">
-      <ion-button (click)="lightsOff()">Close</ion-button>
-    </div>
-  </div>
+
   <div id="skill-area" *ngIf="lightSwitch == false">
     <img (click)="itemSelect(0)" class="skill-image" src="../../../assets/Certs/css-cert.jpg" alt="certificate"/>
     <img (click)="itemSelect(1)" class="skill-image" src="../../../assets/Certs/html-cert.jpg" alt="certificate"/>
@@ -43,8 +39,14 @@
     <img (click)="itemSelect(16)" class="skill-image" src="../../../assets/Certs/web-dev-fundamentals.jpg" alt="certificate"/>
   </div>
 
+  <div id="lightSwitch">
+    <div id="on" *ngIf="lightSwitch">
+      <ion-button (click)="lightsOff()">Close</ion-button>
+    </div>
+  </div>
+  
   <div *ngIf="lightSwitch">
     <div id="backdrop"></div>
-    <img id="showcase" src= {{selected}}/>
+    <img id="showcase" src= {{selected}} alt="featured"/>
   </div>
 </ion-content>

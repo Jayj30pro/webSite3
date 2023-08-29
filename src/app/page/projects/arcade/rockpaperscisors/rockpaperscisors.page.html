@@ -44,15 +44,17 @@
     </div>
 
   </div>
-  <ion-card *ngIf="result">
-    <ion-card-content>
-      <h2>Result:</h2>
-      <p>You chose: {{ playerChoice }}</p>
-      <p>Computer chose: {{ computerChoice }}</p>
-      <p>{{ result }}</p>
-    </ion-card-content>
-    <ion-footer>
-      <ion-button (click)="resetGame()">Play Again</ion-button>
-    </ion-footer>
-  </ion-card>
+  <div id="result">
+    <ion-card *ngIf="result">
+      <ion-card-content>
+        <h2>Result:</h2>
+        <h2>You chose: {{ playerChoice }}</h2>
+        <h2>Computer chose: {{ computerChoice }}</h2>
+        <h1>{{ result }}</h1>
+      </ion-card-content>
+      <ion-footer>
+        <ion-button (click)="resetGame()">Play Again</ion-button>
+      </ion-footer>
+    </ion-card>
+  </div>
 </ion-content>
