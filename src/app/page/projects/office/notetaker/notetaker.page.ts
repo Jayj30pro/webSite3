@@ -37,7 +37,7 @@ export class NotetakerPage implements OnInit {
     add(note: string) {
       if (note != ''){
         this._noteModel.add(note);
-        // remove comment when commiting this.clear();
+        this.clear(); 
       }
       
     }
