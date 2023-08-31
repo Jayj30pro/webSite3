@@ -52,7 +52,7 @@ export class RockpaperscisorsPage implements OnInit {
       }
 
     else {
-      this.result = 'The computer win!s!';
+      this.result = 'The computer wins!';
     }
   }
 

@@ -1,13 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>notetaker</ion-title>
+    <ion-title>Note Taker </ion-title>
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notetaker</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div id="container">
+    <ion-item  id="back">
+      <ion-button (click)="office()"> Back to Office </ion-button>
+    </ion-item>
+    <div id="heading">
+      <strong> {{currentUser()}},</strong>
+      <ion-text>let's make a list of things to do. </ion-text>
+    </div>
+    <div id="notepad">
+      <div id="add">
+        <ion-item >
+          <ion-input label="Add to list:" [(ngModel)]="entry"></ion-input><br/>
+          <ion-button (click)="add(entry)"> Add </ion-button><br/>
+          <ion-button (click)="clear()"> Clear </ion-button><br/>
+        </ion-item>
+      </div>
+      <div id="notes">
+        <ion-item *ngFor="let note of getNotes()" id="list">
+          <ion-text class="list-item"> {{note}} </ion-text>
+          <ion-button (click)="removeItem(note)">X</ion-button><br/>
+        </ion-item>
+      </div>
+    </div>
+  </div>
 </ion-content>
