@@ -17,7 +17,7 @@ export class WeatherPage implements OnInit {
 
   constructor(
     private _navMenuService: NavMenuService,
-    private weatherService: WeatherService,
+    private _weatherService: WeatherService,
     private http: HttpClient,
     private _loginService: LoginService) { }
 
@@ -35,10 +35,18 @@ export class WeatherPage implements OnInit {
   }
 
   getWeather(city: string) {
-    console.log(this.weatherService.getWeather(city));
-    this.weatherService.getWeather(city).subscribe((data: any) => {
+    console.log(this._weatherService.getWeather(city));
+    this._weatherService.getWeather(city).subscribe((data: any) => {
       // Process and display the weather data here
     });
+  }
+
+  getWeatherZip(zipCode: string) {
+    console.log(this._weatherService.getWeatherZip(zipCode));
+  }
+
+  clear() {
+    this.request = '';
   }
   
   about() {

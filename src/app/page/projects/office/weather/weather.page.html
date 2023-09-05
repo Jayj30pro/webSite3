@@ -29,11 +29,12 @@
     <div id="weather-container">
       <ion-input placeholder="Enter the city or zip code." [(ngModel)]="request"></ion-input>
       <div id="weather-results">
-        
+
       </div>
       <div id="weather-controls">
         <ion-button (click)="getWeather(request)"> Search </ion-button>
-        <ion-button> Clear </ion-button>
+        <ion-button (click)="getWeatherZip(request)"> Zip Code </ion-button>
+        <ion-button (click)="clear()" > Clear </ion-button>
       </div>
     </div>
 

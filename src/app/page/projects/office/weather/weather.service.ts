@@ -15,6 +15,10 @@ export class WeatherService {
     return this.http.get(`${this.apiUrl}weather?q=${city}&appid=${this.apiKey}`);
   }
 
+  getWeatherZip(zipCode: string) {
+    return this.http.get(`${this.apiUrl}weather?q=${zipCode}&appid=${this.apiKey}`);
+  }
+
   getForecast(city: string) {
     return this.http.get(`${this.apiUrl}forecast?q=${city}&appid=${this.apiKey}`);
   }
