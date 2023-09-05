@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavMenuService } from 'src/app/nav-menu.service';
 import { LoginService } from 'src/app/login.service';
+import { HttpClient } from '@angular/common/http';
+// weather.component.ts
+import { WeatherService } from './weather.service';
+
+
 
 @Component({
   selector: 'app-weather',
@@ -12,7 +17,11 @@ export class WeatherPage implements OnInit {
 
   constructor(
     private _navMenuService: NavMenuService,
+    private weatherService: WeatherService,
+    private http: HttpClient,
     private _loginService: LoginService) { }
+
+  request = '';
 
   ngOnInit() {
   }
@@ -25,7 +34,12 @@ export class WeatherPage implements OnInit {
     return this._loginService.isSignedIn();
   }
 
-  
+  getWeather(city: string) {
+    console.log(this.weatherService.getWeather(city));
+    this.weatherService.getWeather(city).subscribe((data: any) => {
+      // Process and display the weather data here
+    });
+  }
   
   about() {
     this._navMenuService.about();

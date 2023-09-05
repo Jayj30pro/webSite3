@@ -26,10 +26,15 @@
     <ion-item  id="back">
       <ion-button (click)="office()"> Back to Office </ion-button>
     </ion-item>
-    <div id="weather-results">
-      <ion-input placeholder="Enter the city or zip code."></ion-input>
-      <ion-button> Search </ion-button>
-      <ion-button> Clear </ion-button>
+    <div id="weather-container">
+      <ion-input placeholder="Enter the city or zip code." [(ngModel)]="request"></ion-input>
+      <div id="weather-results">
+        
+      </div>
+      <div id="weather-controls">
+        <ion-button (click)="getWeather(request)"> Search </ion-button>
+        <ion-button> Clear </ion-button>
+      </div>
     </div>
 
   </div>
