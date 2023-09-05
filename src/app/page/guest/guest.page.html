@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Hello </ion-title>
+    <ion-title> What is your name? </ion-title>
     <ion-buttons slot="end" *ngIf="issignedIn()">
       <ion-button color="#3C7" (click)="home()">Home</ion-button>
       <ion-button color="#3C7" (click)="logout()">Logout</ion-button>
@@ -8,9 +8,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="card" id="enter-name" *ngIf="issignedIn() == false">
-  <ion-card-title> Enter your name here </ion-card-title>
-  <ion-input type="text" placeholder="enter name" [(ngModel)]="nameEntered"></ion-input>
-  <ion-button (click)="guestLogin()" > Enter </ion-button>
-  <ion-button (click)="cancel()" > Cancel </ion-button>
+<ion-content class="card"  *ngIf="issignedIn() == false">
+  <div id="enter-name">
+    <ion-card-title align="center"> Enter your name here </ion-card-title>
+    <ion-input align="center" type="text" placeholder="enter name" [(ngModel)]="nameEntered"></ion-input>
+    <ion-button (click)="guestLogin()" > Enter </ion-button>
+    <ion-button (click)="cancel()" > Clear </ion-button>
+  </div>
 </ion-content>

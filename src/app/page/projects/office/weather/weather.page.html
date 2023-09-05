@@ -1,13 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>weather</ion-title>
+    <ion-title>Projects</ion-title>
+    <ion-buttons slot="end" *ngIf="issignedIn()">
+      <ion-button (click)="home()">Home</ion-button>
+      <ion-button (click)="skills()">Skills</ion-button>
+      <ion-button (click)="about()">About</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">weather</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+
+
+<ion-content *ngIf="issignedIn() == false">
+  <div id="loggedOut">
+    <strong> I'm sorry It looks like you were signed out. </strong>
+    <p>Please sign in</p>
+    <ion-button (click)="logout()"> Enter </ion-button>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="issignedIn()">
+  <div id="container">
+    <ion-item  id="back">
+      <ion-button (click)="office()"> Back to Office </ion-button>
+    </ion-item>
+    <div id="weather-results">
+      <ion-input placeholder="Enter the city or zip code."></ion-input>
+      <ion-button> Search </ion-button>
+      <ion-button> Clear </ion-button>
+    </div>
+
+  </div>
 </ion-content>

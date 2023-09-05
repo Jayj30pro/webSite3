@@ -55,8 +55,9 @@ export class ProjectsPage implements OnInit {
   }
 
   logout() {
-    this._navMenuService.welcome();
+    // this._navMenuService.welcome(); // uncomment when loging is ready
     this._loginService.logout();
+    this._navMenuService.guest();
   }
 
 }

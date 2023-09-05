@@ -28,7 +28,11 @@ export class GuestPage implements OnInit {
 
   guestLogin() {
     if (this.nameEntered == '') {
-      alert("Please enter name")
+      let isGuest = confirm("you will be signed in as guest")
+      if (isGuest) {
+        this._loginService.guestLogin('Guest');
+        this._navMenuService.home();
+      }
     }
     else {
       this._loginService.guestLogin(this.nameEntered);
@@ -38,7 +42,8 @@ export class GuestPage implements OnInit {
   
   logout() {
     this._loginService.logout();
-    this._navMenuService.welcome();
+    //this._navMenuService.welcome();  // uncomment when loging is ready
+    this._navMenuService.guest();
   }
   
   home() {
@@ -46,7 +51,8 @@ export class GuestPage implements OnInit {
   }
 
   cancel(){
-    this._navMenuService.welcome();
+    //this._navMenuService.welcome(); // uncomment when loging is ready
+    this.nameEntered = '';
   }
 
 // it works with login but not guest
